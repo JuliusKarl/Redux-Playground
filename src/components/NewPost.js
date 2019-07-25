@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addPost } from '../redux/actions'
+import '../index.css';
 
 export class NewPost extends Component {
     constructor(props) {
@@ -27,11 +28,22 @@ export class NewPost extends Component {
     render() {
         return (
             <div>
-                <form>
-                    <div class="input-group">
-                        <input type="text" class="form=control" onChange={this.changePost} value={this.state.post}></input>
-                        <Button className="btn btn-default" onClick={() => {this.state.post && this.props.addPost(this.state.post) && this.clearInput()}}>Post</Button>
-                    </div>
+                <form className="text-left">
+                    <textarea 
+                        type="text" 
+                        class="form=control width" 
+                        onChange={this.changePost} 
+                        value={this.state.post}>
+                    </textarea>
+                    <br/>
+                    <Button 
+                        className="btn btn-defaults" 
+                        onClick={ () => {
+                            this.state.post 
+                            && this.props.addPost(this.state.post) 
+                            && this.clearInput()}
+                        }>Pin Task
+                    </Button>
                 </form>
             </div>
         );

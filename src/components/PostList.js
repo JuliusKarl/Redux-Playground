@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class PostList extends Component {
     render() {
         return (
             <div>
-                    {this.props.postList.map(post => {
-                        return <div><hr></hr>{post}<hr></hr></div>
-                    })}
+                {this.props.postList.map(post => {
+                    return (
+                        <div className="visiblePostList">
+                            <hr></hr>
+                                <button type="button" className="close">
+                                    <span>&times;</span>
+                                </button>
+                                {post}
+                            <hr></hr>
+                        </div>
+                 )})}
             </div>
         );
     }
