@@ -5,7 +5,7 @@ import rootReducer from './root';
 const middleWare = [thunk];
 
 const initialState = {
-    postList: ['first', 'second']
+    postList: []
 };
 
 const store = createStore(

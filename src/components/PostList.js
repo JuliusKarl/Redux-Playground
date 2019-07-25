@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 export class PostList extends Component {
     render() {
         return (
-
             <div>
-                {this.props.postList.map(post => console.log(post))}
+                    {this.props.postList.map(post => {
+                        return <div><hr></hr>{post}<hr></hr></div>
+                    })}
             </div>
         );
     }

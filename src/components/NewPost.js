@@ -30,7 +30,7 @@ export class NewPost extends Component {
                 <form>
                     <div class="input-group">
                         <input type="text" class="form=control" onChange={this.changePost} value={this.state.post}></input>
-                        <Button className="btn btn-default" onClick={() => {this.props.addPost(this.state.post); this.clearInput()}}>Post</Button>
+                        <Button className="btn btn-default" onClick={() => {this.state.post && this.props.addPost(this.state.post) && this.clearInput()}}>Post</Button>
                     </div>
                 </form>
             </div>
