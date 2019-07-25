@@ -31,7 +31,7 @@ export class NewPost extends Component {
                 <form className="text-left">
                     <textarea 
                         type="text" 
-                        class="form=control width" 
+                        className="form=control width" 
                         onChange={this.changePost} 
                         value={this.state.post}>
                     </textarea>
