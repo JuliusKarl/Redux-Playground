@@ -1,6 +1,13 @@
 .visiblePostList {
     white-space: pre-line;
 }
+
 .width {
     width: 100%;
+}
+
+.postsTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

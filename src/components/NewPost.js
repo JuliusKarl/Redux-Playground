@@ -9,7 +9,8 @@ export class NewPost extends Component {
     constructor(props) {
         super(props)
         this.state = ({
-            post: ''
+            post: '',
+            id: 0
         })
         this.changePost = this.changePost.bind(this);
     }
@@ -21,7 +22,8 @@ export class NewPost extends Component {
     }
     clearInput() {
         this.setState({
-            post: ''
+            post: '',
+            id: this.state.id + 1
         })
     }
 
@@ -40,9 +42,9 @@ export class NewPost extends Component {
                         className="btn btn-defaults" 
                         onClick={ () => {
                             this.state.post 
-                            && this.props.addPost(this.state.post) 
+                            && this.props.addPost(this.state.post, this.state.id) 
                             && this.clearInput()}
-                        }>Pin Task
+                        }>Pin 
                     </Button>
                 </form>
             </div>
@@ -52,7 +54,7 @@ export class NewPost extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addPost: (x) => dispatch(addPost(x))
+        addPost: (x, y) => dispatch(addPost(x, y))
     }
 }
 
