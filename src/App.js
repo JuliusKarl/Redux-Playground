@@ -39,7 +39,7 @@ class App extends Component {
         <div className="App">
             <Navbar color="dark" dark expand="sm" className="mb-5">
               <Container>
-                <NavbarBrand href='/'>Taskr</NavbarBrand>
+                <NavbarBrand href='/'><img id="logo" src="../logo-r.png" /></NavbarBrand>
                 <NavbarToggler onClick={this.toggle}></NavbarToggler>
                 <Collapse isOpen={this.state.isOpen} navbar>
                   <Nav className="ml-auto" navbar>

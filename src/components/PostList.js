@@ -8,7 +8,7 @@ import { Button } from 'reactstrap';
 export class PostList extends Component {
     render() {
         return (
-            <div>
+            <div id="postList">
                 <br></br>
                 <div className="postsTitle">
                     <h4>Task Board</h4>

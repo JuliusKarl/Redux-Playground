@@ -11,3 +11,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+#logo {
+    width: 65px;
+    height: 40px;
+    image-rendering: crisp-edges;
+}
