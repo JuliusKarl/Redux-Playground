@@ -1,7 +1,10 @@
 import { ADD_POST, GET_POSTS, DELETE_POST, CLEAR_ALL } from "./actions";
 
+const initialState = {
+    postList: []
+};
 
-export function rootReducer (state, action) {
+export function rootReducer (state = initialState, action) {
     switch(action.type) {
         case ADD_POST:
             return {

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import store from './redux/store';
+//import store from './redux/store';
 import NewPost from './components/NewPost'
 import PostList from './components/PostList'
-
 import {
   Collapse,
   Navbar,
@@ -15,6 +14,9 @@ import {
   NavLink,
   Container
 } from "reactstrap";
+
+import { persistor, store } from './redux/store';
+import{ PersistGate } from 'redux-persist/integration/react';
 
 class App extends Component {
   constructor(props) {
@@ -33,6 +35,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <PersistGate persistor={persistor} loading={null}>
         <div className="App">
             <Navbar color="dark" dark expand="sm" className="mb-5">
               <Container>
@@ -68,6 +71,7 @@ class App extends Component {
               <PostList />
             </Container>
         </div>
+        </PersistGate>
       </Provider>
     );
   }

@@ -32,6 +32,7 @@ export class NewPost extends Component {
             <div>
                 <form className="text-left">
                     <textarea 
+                        id="newPostTextArea"
                         type="text" 
                         className="form=control width" 
                         onChange={this.changePost} 
