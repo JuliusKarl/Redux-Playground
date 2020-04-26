@@ -11,7 +11,7 @@ export class PostList extends Component {
             <div id="postList">
                 <br></br>
                 <div className="postsTitle">
-                    <h4>Task Board</h4>
+                {this.props.postList.length > 0 && <h4>To Do</h4>}
                     {this.props.postList.length > 0 && <button 
                         onClick={() => this.props.clearAll()} 
                         type="button" 
@@ -25,7 +25,9 @@ export class PostList extends Component {
                 </div>
                 {this.props.postList.map(post => {
                     return (
-                        <div className="visiblePostList" key={post.id}>
+                        <div 
+                            className="visiblePostList" 
+                            key={post.id}>
                                 <button 
                                     onClick={() => this.props.deletePost(post.id)} 
                                     type="button" 

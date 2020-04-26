@@ -13,6 +13,7 @@ export class NewPost extends Component {
             id: 0
         })
         this.changePost = this.changePost.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     changePost = (event) => {
@@ -26,27 +27,32 @@ export class NewPost extends Component {
             id: this.state.id + 1
         })
     }
+    onSubmit(e) {
+        e.preventDefault();
+        if (this.state.post) {
+            this.props.addPost(this.state.post, this.state.id);
+            this.clearInput()}
+    }
 
     render() {
         return (
             <div>
-                <form className="text-left">
-                    <textarea 
+                <form 
+                    className="text-left"
+                    onSubmit={this.onSubmit}>
+                    <input 
+                        placeholder="New Task"
                         id="newPostTextArea"
                         type="text" 
-                        className="form=control width" 
+                        className="form-control width" 
                         onChange={this.changePost} 
                         value={this.state.post}>
-                    </textarea>
+                    </input>
                     <br/>
-                    <Button 
-                        className="btn btn-defaults" 
-                        onClick={ () => {
-                            this.state.post 
-                            && this.props.addPost(this.state.post, this.state.id) 
-                            && this.clearInput()}
-                        }>Pin 
-                    </Button>
+                    <input 
+                        type="submit" 
+                        value=""
+                        style={{display:"none"}}/>
                 </form>
             </div>
         );

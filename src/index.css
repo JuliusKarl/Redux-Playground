@@ -1,19 +1,22 @@
+body {
+    background: #e0e0e0;}
+
+.navbar {
+    background: linear-gradient( #151520, #2a2a38)!important;}
+
 .visiblePostList {
     white-space: pre-line;
-}
+    padding: 10px 10px 0px 10px;
+    border-radius: 5px;
+    background: #ffffff;}
 
 .width {
-    width: 100%;
-}
+    width: 100%;}
 
 .postsTitle {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
+    justify-content: space-between;}
 
-#logo {
-    width: 65px;
-    height: 40px;
-    image-rendering: crisp-edges;
-}
+.form-control {
+    padding: 30px;}

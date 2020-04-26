@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Logo from './Assets/logo.png'
 //import store from './redux/store';
 import NewPost from './components/NewPost'
 import PostList from './components/PostList'
@@ -35,31 +36,41 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <PersistGate persistor={persistor} loading={null}>
+        <PersistGate 
+          persistor={persistor} 
+          loading={null}>
         <div className="App">
-            <Navbar color="dark" dark expand="sm" className="mb-5">
+            <Navbar 
+              color="dark" 
+              dark 
+              expand="sm" 
+              className="mb-5">
               <Container>
-                <NavbarBrand href='/'><img id="logo" src="../logo-r.png" /></NavbarBrand>
+                <NavbarBrand href='/'>
+                  <img 
+                    height="30"
+                    src={Logo}/>
+                </NavbarBrand>
                 <NavbarToggler onClick={this.toggle}></NavbarToggler>
                 <Collapse isOpen={this.state.isOpen} navbar>
                   <Nav className="ml-auto" navbar>
                     <NavItem>
-                      <NavLink href="https://jkmacro.netlify.com/">
-                        Portfolio
+                      <NavLink href="https://juliuskarl.dev/">
+                        <small>PORTFOLIO</small>
                       </NavLink>
                     </NavItem>
                   </Nav>
                   <Nav className="mr-0" navbar>
                     <NavItem>
-                      <NavLink href="https://github.com/JuliusKarl">
-                        GitHub
+                      <NavLink href="https://medium.com/@julius.karl.macrohon">
+                        <small>MEDIUM</small>
                       </NavLink>
                     </NavItem>
                   </Nav>
                   <Nav className="mr-0" navbar>
                     <NavItem>
                       <NavLink href="https://www.linkedin.com/in/juliuskarl/">
-                        LinkedIn
+                        <small>LINKEDIN</small>
                       </NavLink>
                     </NavItem>
                   </Nav>
